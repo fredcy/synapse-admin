@@ -17,9 +17,10 @@ order by origin_server_ts asc
 """
 
 tezos_roomid = "!KNlqwBRiVdbAwkVpKO:matrix.org"
+tezostrader_roomid = "!TUYwzSQkeKBLZlWldJ:matrix.org"
 
 
-def get_level_events(room_id):
+def get_level_events(roomid):
     conn = None
     rows = []
     try:
@@ -28,7 +29,7 @@ def get_level_events(room_id):
         print(f"conn = {conn}")
         cur = conn.cursor()
 
-        cur.execute(query_levels, (tezos_roomid,))
+        cur.execute(query_levels, (roomid,))
         rows = cur.fetchall()
 
         cur.close()
