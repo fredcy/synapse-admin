@@ -39,5 +39,3 @@ def get_level_events(roomid):
         if conn is not None:
             conn.close()
         return rows
-
-
